@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage[english]{babel}	
+
+\usepackage{float}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage{geometry}
+
+% syntax highlighting
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
+\lstloadlanguages{Ruby}
+\lstset{language=Ruby,
+	basicstyle=\ttfamily\color{black},
+	keywordstyle=\ttfamily\color{blue},
+	commentstyle = \ttfamily\color{gray},
+	stringstyle=\color{MidnightBlue},
+	numbers=left, 
+	firstnumber=1, 
+	numberstyle=\color{Blue}, 
+	stepnumber=1 ,
+	tabsize=2, 
+}
+
+% Custom sectioning
+\usepackage{sectsty}
+\allsectionsfont{ \normalfont\scshape}
+
+% horizontal rule
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}}
+
+% table fix
+\restylefloat{table}
+
+\title{
+	\normalfont \normalsize \textsc{CSCI 123: Course Name} \\ [25pt]
+	\horrule{0.5pt} \\[0.4cm]
+	\huge Title \\
+	\horrule{2pt} \\[0.5cm]
+}
+
+\date{\today}
+
+\author{
+	First Last
+	\vspace{.5in}
+}
+
+\setlength\parindent{0pt}
+\begin{document}
+\maketitle
+\clearpage
+
+\section{Section}
+Text with fancy \LaTeXe
+
+\subsection{Subsection}
+Equation: \\
+\begin{equation}
+M[i,j]=\textrm{Max} \{M[i-1,j-k]+k(p_i-f_k-T[i-1,j-k]     k=0...j\}
+\end{equation} \\
+
+\begin{enumerate}
+\item This
+\item is
+\item a
+\item[] list % no index
+\end{enumerate}
+
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\textbf{$M[i,j]$}      & \textbf{0} & \textbf{1}    & \textbf{2}     & \textbf{\ldots} & \textbf{x}     \\ \hline
+\textbf{1}      & 0          & $(p_1 - f_1)$ & $2(p_1 - f_2)$ & \ldots          & $x(p_1 - f_x)$ \\ \hline
+\textbf{2}      & 0          &               &                &                 &                \\ \hline
+\textbf{\ldots} &            &               &                &                 &                \\ \hline
+\textbf{n}      & 0          &               &                &                 &                \\ \hline
+\end{tabular}
+\caption{This is a caption}
+\end{table}
+
+\begin{lstlisting}[language=Ruby, caption=Ruby snippet]
+#this is a comment
+
+class foo
+	def bar
+		puts "foobar"
+	end
+end
+
+\end{lstlisting}
+
+\end{document}
